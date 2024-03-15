@@ -2,25 +2,47 @@
 
 This API could be run with NODE v14.
 
-## Install
 
-    npm install
+## Install and run Api and Test
 
-## Run the app
+```python
+# Install
+npm install
 
-    npm start
+# Run the app
+npm start
 
-## Run the tests
+# Run the tests
+npm test
 
-    npm test
+## NOTE: "npm start" or "npm test" may vary depending on OS, i recommend use DOCKER to run app or test
+
+```
+
+## Steps to pull docker image for "npm start" - "npm test" and how to run it
+```python
+
+# Docker pull image for start app (npm start)
+docker pull alanarganaraz/challenge-api
+
+# Then, you must run that image
+docker run -p 3000:3000 alanarganaraz/challenge-api
+
+
+
+## Docker pull image for test app (npm test)
+docker pull alanarganaraz/challenge-api-test
+
+## Then, you must run that image
+docker run -p 3000:3000 alanarganaraz/challenge-api-test
+
+```
 
 ## Swagger documentation can be found at
 
     http://localhost:3000/api/v1/docs
 
-# API
-
-The API to the example app is described below.
+# API Requests
 
 ## Get list of files, only names.
 
@@ -52,7 +74,6 @@ The API to the example app is described below.
     {"files":["test1.csv","test2.csv","test3.csv","test18.csv","test4.csv","test5.csv","test6.csv","test9.csv","test15.csv"]}
 
 ## Get list of formatted CSV
-
 ### Request
 
 `GET /files/data`
